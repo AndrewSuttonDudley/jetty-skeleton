@@ -1,0 +1,23 @@
+<configuration>
+	
+	<appender name="ACCESS-CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>common</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>/var/log/jetty-skeleton/access.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/var/log/jetty-skeleton/access.%d</fileNamePattern>
+		</rollingPolicy>
+		
+		<encoder>
+			<pattern>common</pattern>
+		</encoder>
+	</appender>
+	
+	<appender-ref ref="FILE" />
+	<appender-ref ref="ACCESS-CONSOLE" />
+	
+</configuration>
